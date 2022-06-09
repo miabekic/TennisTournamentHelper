@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tennis Tournament Helper</string>
+    <string name="login">Prijava</string>
+    <string name="hintUserName">Korisničko ime</string>
+    <string name="hintPassword">Lozinka</string>
+    <string name="hintConfirmPassword">Potvrdi lozinku</string>
+    <string name="doNotHaveAccount">Nemate račun?</string>
+    <string name="register">Registriraj se</string>
+    <string name="btnLogin">Prijavi se</string>
+    <string name="btnRegistration">Registriraj se</string>
+    <string name="matchesDone">Završeni mečevi</string>
+    <string name="trialMatches">Mečevi za suđenje</string>
+    <string name="tournamentsDone">Završeni turniri</string>
+    <string name="tournaments">Zakazani/trenutni turniri</string>
+</resources>

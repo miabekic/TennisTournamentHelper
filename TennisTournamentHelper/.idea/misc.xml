@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/finished_matches_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_finised_tournaments_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_matches_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_matches.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_new_finished_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_new_player.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_new_trail_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_players_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_registration.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_tournaments.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_trail_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_trail_matches_list.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_finished_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_finished_tournament.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_players.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_players_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_tournament.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/item_trail_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/login_fragment.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/matches_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/registration_fragment.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/tournaments_fragment.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/menu/bottom_menu.xml" value="0.36302083333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
