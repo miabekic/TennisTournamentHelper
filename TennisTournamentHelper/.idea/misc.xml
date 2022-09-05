@@ -3,26 +3,75 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finised_tournaments_list.xml" value="0.10582010582010581" />
+        <entry key="..\:/Users/miazi/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_login_registation.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_main_real.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_proba.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_splash.xml" value="0.10625" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/activity_splash_screen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/app_bar_main.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/app_bar_proba.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/content_main.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/content_proba.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/custom_dialog.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_current_torunament_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_current_tournament_details.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_current_tournament_list.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finised_tournaments_list.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_match_details.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_match_list.xml" value="0.144017094017094" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_matches_list.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_login.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_matches.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_tournament_details.xml" value="0.32248803827751193" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_finished_tournament_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_list_generic.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_matches.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_navigation.xml" value="0.1" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_finished_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match.xml" value="0.29786324786324786" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match_torunament_conected.xml" value="0.12907608695652173" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match_torunament_no_related.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match_tournament_no_related.xml" value="0.10326086956521739" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_match_tournament_related.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_player.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_trail_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament_basic_info.xml" value="0.22" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament_maps.xml" value="0.22" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament_matches_rules.xml" value="0.22" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_tournament_place.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_new_trail_match.xml" value="0.22" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_player_current_tournament_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_player_finished_tournament_list.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_players_current_tournament_list.xml" value="0.144017094017094" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_players_list.xml" value="0.10582010582010581" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_registration.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_registration.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_reusable_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_schedueled_current_tournament_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_scheduled_current_tournament_details.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_scheduled_current_tournaments_list.xml" value="0.14273504273504273" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_tournaments.xml" value="0.1" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_trail_matches_list.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_trail.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_trail_match_list.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/fragment_trail_matches_list.xml" value="0.12138728323699421" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/gtgv.xml" value="0.2863247863247863" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_finished_match.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_finished_tournament.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_match.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_player.xml" value="0.144017094017094" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_players.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_tournament.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/item_trail_match.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/nav_header_main.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/nav_header_proba.xml" value="0.29786324786324786" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/proba.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/progress_bar.xml" value="0.144017094017094" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/layout/scheduled_currentt_tournaments_list.xml" value="0.1" />
-        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/bottom_menu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/activity_main_drawer.xml" value="0.29786324786324786" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/main.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/proba.xml" value="0.29786324786324786" />
+        <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/TennisTournamentHelper/app/src/main/res/menu/top_menu.xml" value="0.1" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/finished_matches_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/miazi/Desktop/TennisTournamentHelper/app/src/main/res/layout/fragment_finised_tournaments_list.xml" value="0.17552083333333332" />

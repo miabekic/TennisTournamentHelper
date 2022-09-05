@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left_trail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top_trail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right_trail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+
+    <TextView
+            android:id="@+id/tv_playersOne"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toEndOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_PlayersTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <Button
+            android:id="@+id/b_ace_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ace"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toEndOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/tv_game_result_playerOne" />
+
+    <Button
+            android:id="@+id/b_double_fault_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/double_fault"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_ace_first" />
+
+    <Button
+            android:id="@+id/b_winner_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/winner_point"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_double_fault_first" />
+
+    <Button
+            android:id="@+id/b_unforced_error_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/unforced_error"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_winner_first" />
+
+    <Button
+            android:id="@+id/b_forced_error_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/forced_error"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_unforced_error_first" />
+
+    <Button
+            android:id="@+id/b_ace_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ace"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toBottomOf="@id/tv_game_result_playerTwo" />
+
+    <Button
+            android:id="@+id/b_double_fault_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/double_fault"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_ace_second" />
+
+    <Button
+            android:id="@+id/b_winner_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/winner_point"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_double_fault_second" />
+
+    <Button
+            android:id="@+id/b_unforced_error_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/unforced_error"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_winner_second" />
+
+    <Button
+            android:id="@+id/b_forced_error_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/forced_error"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toBottomOf="@id/b_unforced_error_second" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_middle_trail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+    <View
+            android:id="@+id/line_top"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail" />
+
+    <View
+            android:id="@+id/line_middle"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/tv_playersOne"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail" />
+
+    <View
+            android:id="@+id/line_end"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/tv_PlayersTwo" />
+
+    <View
+            android:id="@+id/line_name_score_divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <TextView
+            android:id="@+id/tv_first_set_PlayerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/line_middle"
+            app:layout_constraintStart_toEndOf="@id/line_name_score_divider"
+            app:layout_constraintTop_toTopOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_first_set_PlayerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/line_name_score_divider"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <View
+            android:id="@+id/line_first_set"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <View
+            android:id="@+id/line_second_set"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/tv_first_set_PlayerOne"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <TextView
+            android:id="@+id/tv_second_set_PlayerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_middle"
+            app:layout_constraintStart_toEndOf="@id/line_second_set"
+            app:layout_constraintTop_toTopOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_second_set_PlayerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/line_second_set"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <View
+            android:id="@+id/line_third_set"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/tv_second_set_PlayerOne"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <TextView
+            android:id="@+id/tv_third_set_playerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_middle"
+            app:layout_constraintStart_toEndOf="@id/line_third_set"
+            app:layout_constraintTop_toTopOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_third_set_payerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/line_third_set"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <View
+            android:id="@+id/line_fourth_set"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/tv_third_set_playerOne"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <TextView
+            android:id="@+id/tv_fourth_set_playerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_middle"
+            app:layout_constraintStart_toEndOf="@id/line_fourth_set"
+            app:layout_constraintTop_toTopOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_fourth_set_playerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/line_fourth_set"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <View
+            android:id="@+id/line_fifth_set"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/tv_fourth_set_playerOne"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_trail" />
+
+    <TextView
+            android:id="@+id/tv_fifth_set_playerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_middle"
+            app:layout_constraintStart_toEndOf="@id/line_fifth_set"
+            app:layout_constraintTop_toTopOf="@id/line_top" />
+
+    <TextView
+            android:id="@+id/tv_fifth_set_playerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/line_end"
+            app:layout_constraintStart_toEndOf="@id/line_fifth_set"
+            app:layout_constraintTop_toBottomOf="@id/line_middle" />
+
+    <TextView
+            android:id="@+id/tv_playersNamesOne_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/line_end" />
+
+    <TextView
+            android:id="@+id/tv_playersNamesTwo_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/line_end"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle_trail" />
+
+    <TextView
+            android:id="@+id/tv_game_result_playerOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_trail"
+            app:layout_constraintStart_toStartOf="@id/guideline_left_trail"
+            app:layout_constraintTop_toBottomOf="@id/tv_playersNamesOne_result" />
+
+    <TextView
+            android:id="@+id/tv_game_result_playerTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right_trail"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/tv_game_result_playerOne"
+            app:layout_constraintTop_toBottomOf="@id/tv_playersNamesTwo_result" />
+</androidx.constraintlayout.widget.ConstraintLayout>

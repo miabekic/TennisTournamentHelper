@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.example.tennistournamenthelper.model.PlayersGender" />
+
+        <import type="com.example.tennistournamenthelper.model.Surface" />
+
+        <variable
+                name="viewModel"
+                type="com.example.tennistournamenthelper.presentation.tournaments.NewTournamentViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <EditText
+                    android:id="@+id/et_name_new_tournament"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_tournament_name"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toEndOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_top_new_tournament_basic_info" />
+
+
+            <TextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/start_date"
+                    app:layout_constraintStart_toEndOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/et_name_new_tournament" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left_new_tournament_basic_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top_new_tournament_basic_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right_new_tournament_basic_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+            <DatePicker
+                    android:id="@+id/dp_start_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/tv_start_date" />
+
+            <TextView
+                    android:id="@+id/tv_end_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/end_date"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/dp_start_date" />
+
+            <DatePicker
+                    android:id="@+id/dp_end_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/tv_end_date" />
+
+            <TextView
+                    android:id="@+id/tv_players_new_tournament"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/allowed_players_gender"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_allowed_players_gender"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/dp_end_date" />
+
+
+            <RadioGroup
+                    android:id="@+id/rg_allowed_players_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toEndOf="@id/tv_players_new_tournament"
+                    app:layout_constraintTop_toBottomOf="@id/dp_end_date">
+
+                <RadioButton
+                        android:id="@+id/rb_female_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.tournament.allowedPlayersGender == PlayersGender.FEMALE ? true : false}"
+                        android:text="@string/female" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.tournament.allowedPlayersGender == PlayersGender.MALE ? true : false}"
+                        android:text="@string/male" />
+
+                <RadioButton
+                        android:id="@+id/rb_both_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.tournament.allowedPlayersGender == PlayersGender.BOTH ? true : false}"
+                        android:text="@string/male_and_female"
+                        android:onClick="@{() -> viewModel.setPlayersGender(PlayersGender.BOTH)}" />
+            </RadioGroup>
+
+
+            <TextView
+                    android:id="@+id/tv_surface"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/surface"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_surface_new_tournament"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toTopOf="@id/rg_surface_new_tournament" />
+
+            <RadioGroup
+                    android:id="@+id/rg_surface_new_tournament"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toEndOf="@id/tv_surface"
+                    app:layout_constraintTop_toBottomOf="@id/rg_allowed_players_gender">
+
+                <RadioButton
+                        android:id="@+id/rb_hard_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.HARD)}"
+                        android:checked="@{viewModel.tournament.surface == Surface.HARD ? true : false}"
+                        android:text="@string/hard" />
+
+                <RadioButton
+                        android:id="@+id/rb_grass_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.tournament.surface == Surface.GRASS ? true : false}"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.GRASS)}"
+                        android:text="@string/grass" />
+
+                <RadioButton
+                        android:id="@+id/rb_clay_new_tournament"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.CLAY)}"
+                        android:checked="@{viewModel.tournament.surface == Surface.CLAY ? true : false}"
+                        android:text="@string/clay" />
+            </RadioGroup>
+
+            <Button
+                    android:id="@+id/b_next_new_tournament_basic_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_basic_info"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_basic_info"
+                    app:layout_constraintTop_toBottomOf="@id/rg_surface_new_tournament" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="round_array">
+        <item>Round 1</item>
+        <item>Round 2</item>
+        <item>Round 3</item>
+        <item>Round 4</item>
+        <item>Quarter-Finals</item>
+        <item>Semi-Finals</item>
+        <item>Final</item>
+    </string-array>
+</resources>

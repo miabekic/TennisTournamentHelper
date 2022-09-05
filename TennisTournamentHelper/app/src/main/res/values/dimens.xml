@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+    <dimen name="search_view_margin">8dp</dimen>
+    <dimen name="b_set_tournament_as_finished_margin_top">10dp</dimen>
+    <dimen name="map_margin_top">10dp</dimen>
+    <dimen name="tv_login_text_size">35dp</dimen>
+    <dimen name="et_email_login_margin_top">20dp</dimen>
+    <dimen name="tv_do_not_have_account_margin_top">5dp</dimen>
+    <dimen name="tv_forgot_password_margin_top">10dp</dimen>
+    <dimen name="b_login_margin_top">20dp</dimen>
+    <dimen name="et_playerTwo_first_new_match_margin_top">20dp</dimen>
+    <dimen name="tv_date_new_match_tournament_related_margin_top">10dp</dimen>
+    <dimen name="rg_winner_new_match_margin_top">10dp</dimen>
+    <dimen name="spinner_min_height">48dp</dimen>
+    <dimen name="details_text_size">15sp</dimen>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_trailMatches">
+    <fragment
+        android:id="@+id/nav_finishedTournaments"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.tournament_list.FinishedTournamentListFragment"
+        android:label="Finished Tournaments"
+        tools:layout="@layout/fragment_finished_tournament_list" >
+        <action
+            android:id="@+id/action_nav_finishedTournaments_to_finishedTournamentDetailsFragment"
+            app:destination="@id/finishedTournamentDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_finishedMatches"
+        android:name="com.example.tennistournamenthelper.ui.matches.match_list.FinishedMatchesListFragment"
+        android:label="Finished Matches"
+        tools:layout="@layout/fragment_trail_match_list" >
+        <action
+            android:id="@+id/action_nav_finishedMatches_to_finishedMatchDetailsFragment"
+            app:destination="@id/finishedMatchDetailsFragment" />
+        <action
+            android:id="@+id/action_nav_finishedMatches_to_newMatchTournamentNoRelatedFragment"
+            app:destination="@id/newMatchTournamentNoRelatedFragment" />
+        <action
+            android:id="@+id/action_nav_finishedMatches_to_newMatchTournamentRelatedFragment"
+            app:destination="@id/newMatchTournamentRelatedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_currentTournaments"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.tournament_list.CurrentTournamentListFragment"
+        android:label="Current Tournaments"
+        tools:layout="@layout/fragment_current_tournament_list" >
+        <action
+            android:id="@+id/action_nav_currentTournaments_to_newTournamentFragment"
+            app:destination="@id/newTournamentBasicInfoFragment" />
+        <action
+            android:id="@+id/action_nav_currentTournaments_to_currentTournamentDetailsFragment"
+            app:destination="@id/currentTournamentDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_trailMatches"
+        android:name="com.example.tennistournamenthelper.ui.matches.match_list.TrailMatchesListFragment"
+        android:label="Trail Matches"
+        tools:layout="@layout/fragment_trail_match_list" >
+        <action
+            android:id="@+id/action_nav_trailMatches_to_trailFragment"
+            app:destination="@id/trailFragment" />
+        <action
+            android:id="@+id/action_nav_trailMatches_to_newMatchTournamentNoRelatedFragment"
+            app:destination="@id/newMatchTournamentNoRelatedFragment" />
+        <action
+            android:id="@+id/action_nav_trailMatches_to_newMatchTournamentRelatedFragment"
+            app:destination="@id/newMatchTournamentRelatedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTournamentBasicInfoFragment"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.new_tournament.NewTournamentBasicInfoFragment"
+        android:label="Determine tournament basic information"
+        tools:layout="@layout/fragment_new_tournament_basic_info">
+        <action
+            android:id="@+id/action_newTournamentBasicInfoFragment_to_newTournamentMatchesRulesFragment"
+            app:destination="@id/newTournamentMatchesRulesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTournamentMatchesRulesFragment"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.new_tournament.NewTournamentMatchesRulesFragment"
+        android:label="Determine matches rules"
+        tools:layout="@layout/fragment_new_tournament_matches_rules">
+        <action
+            android:id="@+id/action_newTournamentMatchesRulesFragment_to_newTournamentMapsFragment"
+            app:destination="@id/newTournamentMapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTournamentMapsFragment"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.new_tournament.NewTournamentPlaceFragment"
+        tools:layout="@layout/fragment_new_tournament_place" >
+        <action
+            android:id="@+id/action_newTournamentMapsFragment_to_nav_currentTournaments"
+            app:destination="@id/nav_currentTournaments"
+            app:popUpTo="@id/nav_currentTournaments"
+            app:popUpToInclusive="true"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/currentTournamentDetailsFragment"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.tournament_details.CurrentTournamentDetailsFragment"
+        android:label="Tournament Details"
+        tools:layout="@layout/fragment_current_tournament_details">
+        <argument
+            android:name="tournamentId"
+            app:argType="string" />
+        <action
+                android:id="@+id/action_currentTournamentDetailsFragment_to_nav_currentTournaments"
+                app:destination="@id/nav_currentTournaments"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/nav_currentTournaments" />
+        <action
+            android:id="@+id/action_currentTournamentDetailsFragment_to_playerListFragment"
+            app:destination="@id/playerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPlayerFragment"
+        android:name="com.example.tennistournamenthelper.ui.players.new_player.NewPlayerFragment"
+        android:label="Add new player"
+        tools:layout="@layout/fragment_new_player"
+        >
+        <argument
+            android:name="tournamentId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_newPlayerFragment_to_playerListFragment"
+            app:destination="@id/playerListFragment"
+            app:popUpTo="@id/playerListFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/playerListFragment"
+        android:name="com.example.tennistournamenthelper.ui.players.player_list.PlayerCurrentTournamentListFragment"
+        android:label="Players"
+        tools:layout="@layout/fragment_trail_match_list">
+        <argument
+            android:name="tournamentId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_playerListFragment_to_newPlayerFragment"
+            app:destination="@id/newPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trailFragment"
+        android:name="com.example.tennistournamenthelper.ui.matches.trail.TrailFragment"
+        android:label="Trail"
+        tools:layout="@layout/fragment_trail">
+        <action
+            android:id="@+id/action_trailFragment_to_nav_trailMatches"
+            app:destination="@id/nav_trailMatches"
+            app:popUpTo="@id/nav_trailMatches"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="matchId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedMatchDetailsFragment"
+        android:name="com.example.tennistournamenthelper.ui.matches.match_details.FinishedMatchDetailsFragment"
+        android:label="Match Details"
+        tools:layout="@layout/fragment_finished_match_details">
+        <argument
+            android:name="matchId"
+            app:argType="string" />
+        <action
+                android:id="@+id/action_finishedMatchDetailsFragment_to_nav_finishedMatches"
+                app:destination="@id/nav_finishedMatches"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/nav_finishedMatches" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedTournamentDetailsFragment"
+        android:name="com.example.tennistournamenthelper.ui.tournaments.tournament_details.FinishedTournamentDetailsFragment"
+        android:label="Tournament details"
+        tools:layout="@layout/fragment_finished_tournament_details" >
+        <argument
+            android:name="tournamentId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_finishedTournamentDetailsFragment_to_playerFinishedTournamentListFragment"
+            app:destination="@id/playerFinishedTournamentListFragment" />
+        <action
+                android:id="@+id/action_finishedTournamentDetailsFragment_to_nav_finishedTournaments"
+                app:destination="@id/nav_finishedTournaments"
+                app:popUpTo="@id/nav_finishedTournaments"
+                app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFinishedTournamentListFragment"
+        android:name="com.example.tennistournamenthelper.ui.players.player_list.PlayerFinishedTournamentListFragment"
+        android:label="PlayerFinishedTournamentListFragment"
+        tools:layout="@layout/fragment_player_finished_tournament_list">
+        <argument
+            android:name="tournamentId"
+            app:argType="string" />
+        <action
+                android:id="@+id/action_playerFinishedTournamentListFragment_to_nav_finishedTournaments"
+                app:destination="@id/nav_finishedTournaments"
+                app:popUpTo="@id/nav_finishedTournaments"
+                app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMatchTournamentNoRelatedFragment"
+        android:name="com.example.tennistournamenthelper.ui.matches.new_match.NewMatchTournamentNoRelatedFragment"
+        android:label="Create match"
+        tools:layout="@layout/fragment_new_match_tournament_no_related">
+        <action
+            android:id="@+id/action_newMatchTournamentNoRelatedFragment_to_nav_trailMatches"
+            app:destination="@id/nav_trailMatches"
+            app:popUpTo="@id/nav_trailMatches"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newMatchTournamentNoRelatedFragment_to_nav_finishedMatches"
+            app:destination="@id/nav_finishedMatches"
+            app:popUpTo="@id/nav_finishedMatches"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="isMatchFinished"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMatchTournamentRelatedFragment"
+        android:name="com.example.tennistournamenthelper.ui.matches.new_match.NewMatchTournamentRelatedFragment"
+        android:label="Create match"
+        tools:layout="@layout/fragment_new_match_tournament_related">
+        <action
+            android:id="@+id/action_newMatchTournamentRelatedFragment_to_nav_trailMatches"
+            app:destination="@id/nav_trailMatches"
+            app:popUpTo="@id/nav_trailMatches"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newMatchTournamentRelatedFragment_to_nav_finishedMatches"
+            app:destination="@id/nav_finishedMatches"
+            app:popUpTo="@id/nav_finishedMatches"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="isMatchFinished"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

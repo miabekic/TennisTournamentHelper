@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipeRefreshNewMatch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+            <TextView
+                    android:id="@+id/tv_tournaments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tournament"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_tournaments"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toTopOf="@id/spinner_tournaments" />
+
+
+            <Spinner
+                    android:id="@+id/spinner_tournaments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_tournaments"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_top_new_match_tournament_related"
+                    android:minHeight="48dp" />
+
+            <TextView
+                    android:id="@+id/tv_date_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/tv_date_new_match_tournament_related_margin_top"
+                    android:textColor="@color/black"
+                    android:text="@string/date"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_rounds" />
+
+            <DatePicker
+                    android:id="@+id/dp_date_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date_new_match_tournament_related" />
+
+            <TextView
+                    android:id="@+id/tv_game_type_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_type"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_games_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toTopOf="@id/spinner_games_new_match_tournament_related" />
+
+            <Spinner
+                    android:id="@+id/spinner_games_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_game_type_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_tournaments"
+                    android:minHeight="48dp" />
+
+            <TextView
+                    android:id="@+id/tv_round_new_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/round"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_rounds"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_games_new_match_tournament_related" />
+
+            <Spinner
+                    android:id="@+id/spinner_rounds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_round_new_match"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_games_new_match_tournament_related"
+                    android:minHeight="48dp" />
+
+            <TextView
+                    android:id="@+id/tv_players_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allowed_players_gender"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/dp_date_new_match_tournament_related" />
+
+            <Spinner
+                    android:id="@+id/spinner_playerOne_first"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/tv_players_new_match_tournament_related"
+                    android:minHeight="@dimen/spinner_min_height" />
+
+            <Spinner
+                    android:id="@+id/spinner_PlayerOne_second"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_playerOne_first"
+                    android:minHeight="@dimen/spinner_min_height" />
+
+            <Spinner
+                    android:id="@+id/spinner_playerTwo_first"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_PlayerOne_second"
+                    android:minHeight="@dimen/spinner_min_height" />
+
+            <Spinner
+                    android:id="@+id/spinner_playerTwo_second"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_playerTwo_first"
+                    android:minHeight="@dimen/spinner_min_height" />
+
+
+            <EditText
+                    android:id="@+id/et_result_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_result"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toEndOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/rg_winner_new_match_tournament_related"
+                    android:inputType="text" />
+
+            <TextView
+                    android:id="@+id/tv_winner_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winner"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_winner_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toTopOf="@id/rg_winner_new_match_tournament_related" />
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_result_new_match_tournament_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_winner_new_match_tournament_related, rg_winner_new_match_tournament_related, et_result_new_match_tournament_related" />
+
+            <RadioGroup
+                    android:id="@+id/rg_winner_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/rg_winner_new_match_margin_top"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_winner_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_playerTwo_second">
+
+                <RadioButton
+                        android:id="@+id/rb_winner_first_new_match_tournament_related"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/first_player_s"
+                        android:buttonTint="@color/clay_orange" />
+
+                <RadioButton
+                        android:id="@+id/rb_winner_second_new_match_tournament_related"
+                        android:text="@string/second_player_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <Button
+                    android:id="@+id/b_create_new_match_tournament_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create"
+                    android:enabled="false"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_result_new_match_tournament_related" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

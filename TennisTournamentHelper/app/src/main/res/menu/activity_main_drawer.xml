@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/matches"
+                android:title="@string/matches">
+            <menu>
+                <item
+                        android:id="@+id/nav_trailMatches"
+                        android:title="@string/trail_matches" />
+                <item
+                        android:id="@+id/nav_finishedMatches"
+                        android:title="@string/finished_matches" />
+            </menu>
+        </item>
+        <item
+                android:id="@+id/tournaments"
+                android:title="@string/tournaments">
+            <menu>
+                <item
+                        android:id="@+id/nav_currentTournaments"
+                        android:title="@string/current_tournaments" />
+                <item
+                        android:id="@+id/nav_finishedTournaments"
+                        android:title="@string/finished_tournaments" />
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.example.tennistournamenthelper.ResultStatus" />
+
+        <variable
+                name="viewModel"
+                type="com.example.tennistournamenthelper.presentation.tournaments.FinishedTournamentListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.SearchView
+                android:id="@+id/sv_finished_tournament_list"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/search_view_margin"
+                android:layout_height="wrap_content"
+                app:queryHint="@string/search_tournament" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/sr_finished_tournament_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:onRefreshListener="@{() -> viewModel.getContent()}"
+                app:refreshing="@{viewModel.listUiState instanceof ResultStatus.Loading ? true : false}"
+                app:layout_constraintTop_toBottomOf="@id/sv_finished_tournament_list">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_finished_tournament"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

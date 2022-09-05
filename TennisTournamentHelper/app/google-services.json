@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "237270014224",
+    "firebase_url": "https://tennis-tournament-helper-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tennis-tournament-helper",
+    "storage_bucket": "tennis-tournament-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237270014224:android:fb867bd18db8db23666d95",
+        "android_client_info": {
+          "package_name": "com.example.tennistournamenthelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237270014224-qs3f11jl6autrqlqbmm8qpskuup8brku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tennistournamenthelper",
+            "certificate_hash": "3f483e1d610f1f3d7da698302e9005f9e71eb623"
+          }
+        },
+        {
+          "client_id": "237270014224-vhnso0ca5bu5vt9t1gg802um261p2lmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsy9VjD5o9PrbUeTC-IvPn7ZEab3LQo6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237270014224-vhnso0ca5bu5vt9t1gg802um261p2lmv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

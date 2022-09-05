@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <import type="com.example.tennistournamenthelper.model.PlayersGender" />
+
+        <import type="android.view.View" />
+
+        <import type="com.example.tennistournamenthelper.model.GameType" />
+
+        <import type="com.example.tennistournamenthelper.model.Tiebreak" />
+
+        <variable
+                name="viewModel"
+                type="com.example.tennistournamenthelper.presentation.tournaments.NewTournamentViewModel" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left_new_tournament_matches_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top_new_tournament_matches_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right_new_tournament_matches_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_female_games"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.MALE ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_female_games, cb_female_singles, cb_female_doubles"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_top_new_tournament_matches_rules" />
+
+            <TextView
+                    android:id="@+id/tv_female_games"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/group_female_games" />
+
+            <CheckBox
+                    android:id="@+id/cb_female_singles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/singles"
+                    android:checked="@{viewModel.checkedFemaleSingles}"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/tv_female_games" />
+
+            <CheckBox
+                    android:id="@+id/cb_female_doubles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/doubles"
+                    android:checked="@{viewModel.checkedFemaleDoubles}"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/rg_female_singles_tiebreak" />
+
+            <TextView
+                    android:id="@+id/tv_female_singles_sets_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_female_singles_sets_number"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_female_singles_sets_number" />
+
+            <RadioGroup
+                    android:id="@+id/rg_female_singles_sets_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_female_singles_sets_number"
+                    app:layout_constraintTop_toBottomOf="@id/cb_female_singles">
+
+                <RadioButton
+                        android:id="@+id/rb_female_singles_sets_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.SINGLES_FEMALE, 2) }"
+                        android:checked="@{viewModel.checkedFemaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_FEMALE)].sets == 2 ? true : false : true}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_singles_sets_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.checkedFemaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_FEMALE)].sets == 3 ? true : false : false}"
+                        android:onClick="@{() -> viewModel.setSets(GameType.SINGLES_FEMALE, 3) }"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_female_singles_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.MALE &amp;&amp; viewModel.checkedFemaleSingles  ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_female_singles_sets_number, rg_female_singles_sets_number, tv_female_singles_tiebreak, rg_female_singles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/cb_female_singles" />
+
+            <TextView
+                    android:id="@+id/tv_female_singles_tiebreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rg_female_singles_tiebreak"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_female_singles_tiebreak" />
+
+            <RadioGroup
+                    android:id="@+id/rg_female_singles_tiebreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_female_singles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/rg_female_singles_sets_number">
+
+                <RadioButton
+                        android:id="@+id/rb_female_singles_tiebreak_not_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_FEMALE, Tiebreak.NOT_ALLOWED) }"
+                        android:checked="@{viewModel.checkedFemaleSingles  ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_FEMALE)].tiebreak == Tiebreak.NOT_ALLOWED ? true : false : false}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_singles_tiebreak_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_FEMALE, Tiebreak.TEN_POINTS) }"
+                        android:checked="@{viewModel.checkedFemaleSingles  ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_FEMALE)].tiebreak == Tiebreak.TEN_POINTS ? true : false : false}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_singles_tiebreak_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_FEMALE, Tiebreak.TWELVE_POINTS) }"
+                        android:checked="@{viewModel.checkedFemaleSingles  ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_FEMALE)].tiebreak == Tiebreak.TWELVE_POINTS ? true : false : true}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_female_doubles_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.MALE &amp;&amp; viewModel.checkedFemaleDoubles  ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_female_doubles_sets_number, rg_female_doubles_sets_number, tv_female_doubles_tiebreak, rg_female_doubles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/cb_female_doubles" />
+
+            <TextView
+                    android:id="@+id/tv_female_doubles_sets_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_female_doubles_sets_number"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/cb_female_doubles" />
+
+            <RadioGroup
+                    android:id="@+id/rg_female_doubles_sets_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_female_doubles_sets_number"
+                    app:layout_constraintTop_toBottomOf="@id/cb_female_doubles">
+
+                <RadioButton
+                        android:id="@+id/rb_female_doubles_sets_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.DOUBLES_FEMALE, 2)}"
+                        android:checked="@{viewModel.checkedFemaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_FEMALE)].sets == 2 ? true : false: true}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_doubles_sets_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.DOUBLES_FEMALE, 3)}"
+                        android:checked="@{viewModel.checkedFemaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_FEMALE)].sets == 3 ? true : false : false}"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <TextView
+                    android:id="@+id/tv_female_doubles_tiebreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rg_female_doubles_tiebreak"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_female_doubles_tiebreak" />
+
+            <RadioGroup
+                    android:id="@+id/rg_female_doubles_tiebreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_female_doubles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/rg_female_doubles_sets_number">
+
+                <RadioButton
+                        android:id="@+id/rb_female_doubles_tiebreak_not_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_FEMALE, Tiebreak.NOT_ALLOWED)}"
+                        android:checked="@{viewModel.checkedFemaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_FEMALE)].tiebreak == Tiebreak.NOT_ALLOWED ? true : false : false}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_doubles_tiebreak_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_FEMALE, Tiebreak.TEN_POINTS)}"
+                        android:checked="@{viewModel.checkedFemaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_FEMALE)].tiebreak == Tiebreak.TEN_POINTS ? true : false : false}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_female_doubles_tiebreak_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_FEMALE, Tiebreak.TWELVE_POINTS)}"
+                        android:checked="@{viewModel.checkedFemaleDoubles ?  viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_FEMALE)].tiebreak == Tiebreak.TWELVE_POINTS ? true : false : true}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_male_games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.FEMALE ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_male_games, cb_male_singles, cb_male_doubles"
+                    app:layout_constraintTop_toBottomOf="@id/group_female_doubles_rules" />
+
+            <TextView
+                    android:id="@+id/tv_male_games"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/rg_female_doubles_tiebreak" />
+
+            <CheckBox
+                    android:id="@+id/cb_male_singles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/singles"
+                    android:checked="@{viewModel.checkedMaleSingles}"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/tv_male_games" />
+
+            <CheckBox
+                    android:id="@+id/cb_male_doubles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/doubles"
+                    android:checked="@{viewModel.checkedMaleDoubles}"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/rg_male_singles_tiebreak" />
+
+            <TextView
+                    android:id="@+id/tv_male_singles_sets_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_male_singles_sets_number"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_singles" />
+
+            <RadioGroup
+                    android:id="@+id/rg_male_singles_sets_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_male_singles_sets_number"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_singles">
+
+                <RadioButton
+                        android:id="@+id/rb_male_singles_sets_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.SINGLES_MALE, 2)}"
+                        android:checked="@{viewModel.checkedMaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_MALE)].sets == 2 ? true : false: true}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_singles_sets_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.SINGLES_MALE, 3)}"
+                        android:checked="@{viewModel.checkedMaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_MALE)].sets == 3 ? true : false: false}"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_male_singles_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.FEMALE &amp;&amp; viewModel.checkedMaleSingles  ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_male_singles_sets_number, rg_male_singles_sets_number, tv_male_singles_tiebreak, rg_male_singles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_singles" />
+
+            <TextView
+                    android:id="@+id/tv_male_singles_tiebreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rg_male_singles_tiebreak"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_male_singles_tiebreak" />
+
+            <RadioGroup
+                    android:id="@+id/rg_male_singles_tiebreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_male_singles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/rg_male_singles_sets_number">
+
+                <RadioButton
+                        android:id="@+id/rb_male_singles_tiebreak_not_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_MALE, Tiebreak.NOT_ALLOWED)}"
+                        android:checked="@{viewModel.checkedMaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_MALE)].tiebreak == Tiebreak.NOT_ALLOWED ? true : false: false}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_singles_tiebreak_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_MALE, Tiebreak.TEN_POINTS)}"
+                        android:checked="@{viewModel.checkedMaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_MALE)].tiebreak == Tiebreak.TEN_POINTS ? true : false: false}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_singles_tiebreak_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.SINGLES_MALE, Tiebreak.TWELVE_POINTS)}"
+                        android:checked="@{viewModel.checkedMaleSingles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.SINGLES_MALE)].tiebreak == Tiebreak.TWELVE_POINTS ? true : false: true}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_male_doubles_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() != PlayersGender.FEMALE &amp;&amp; viewModel.checkedMaleDoubles  ? View.VISIBLE : View.GONE}"
+                    app:constraint_referenced_ids="tv_male_doubles_sets_number, rg_male_doubles_sets_number, tv_male_doubles_tiebreak, rg_male_doubles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_doubles" />
+
+            <TextView
+                    android:id="@+id/tv_male_doubles_sets_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_male_doubles_sets_number"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_doubles" />
+
+            <RadioGroup
+                    android:id="@+id/rg_male_doubles_sets_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_male_doubles_sets_number"
+                    app:layout_constraintTop_toBottomOf="@id/cb_male_doubles">
+
+                <RadioButton
+                        android:id="@+id/rb_male_doubles_sets_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.DOUBLES_MALE, 2)}"
+                        android:checked="@{viewModel.checkedMaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_MALE)].sets == 2 ? true : false: true}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_doubles_sets_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.DOUBLES_MALE, 3)}"
+                        android:checked="@{viewModel.checkedMaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_MALE)].sets == 3 ? true : false: false}"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <TextView
+                    android:id="@+id/tv_male_doubles_tiebreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rg_male_doubles_tiebreak"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_male_doubles_tiebreak" />
+
+            <RadioGroup
+                    android:id="@+id/rg_male_doubles_tiebreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_male_doubles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/rg_male_doubles_sets_number">
+
+                <RadioButton
+                        android:id="@+id/rb_male_doubles_tiebreak_not_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_MALE, Tiebreak.NOT_ALLOWED)}"
+                        android:checked="@{viewModel.checkedMaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_MALE)].tiebreak == Tiebreak.NOT_ALLOWED ? true : false: false}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_doubles_tiebreak_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_MALE, Tiebreak.TEN_POINTS)}"
+                        android:checked="@{viewModel.checkedMaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_MALE)].tiebreak == Tiebreak.TEN_POINTS ? true : false: false}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_male_doubles_tiebreak_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.DOUBLES_MALE, Tiebreak.TWELVE_POINTS)}"
+                        android:checked="@{viewModel.checkedMaleDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.DOUBLES_MALE)].tiebreak == Tiebreak.TWELVE_POINTS ? true : false: true}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+            <Button
+                    android:id="@+id/btn_next_new_tournament_match_rules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/rg_mixed_doubles_tiebreak" />
+
+            <CheckBox
+                    android:id="@+id/cb_mixed_doubles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/mixed_doubles"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    android:textColor="@color/black"
+                    android:visibility="@{viewModel.tournament.component6() == PlayersGender.BOTH ? View.VISIBLE : View.GONE}"
+                    android:checked="@{viewModel.checkedMixedDoubles}"
+                    app:layout_constraintTop_toBottomOf="@id/rg_male_doubles_tiebreak" />
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_mixed_doubles_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.tournament.component6() == PlayersGender.BOTH &amp;&amp; viewModel.checkedMixedDoubles ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/rg_male_doubles_tiebreak"
+                    app:constraint_referenced_ids="tv_mixed_doubles_sets_number, rg_mixed_doubles_sets_number, tv_mixed_doubles_tiebreak, rg_mixed_doubles_tiebreak" />
+
+            <TextView
+                    android:id="@+id/tv_mixed_doubles_sets_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_mixed_doubles_sets_number"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toBottomOf="@id/cb_mixed_doubles" />
+
+            <RadioGroup
+                    android:id="@+id/rg_mixed_doubles_sets_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_mixed_doubles_sets_number"
+                    app:layout_constraintTop_toBottomOf="@id/cb_mixed_doubles">
+
+                <RadioButton
+                        android:id="@+id/rb_mixed_doubles_sets_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.MIXED_DOUBLES, 2)}"
+                        android:checked="@{viewModel.checkedMixedDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.MIXED_DOUBLES)].sets == 2 ? true : false: true}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_mixed_doubles_sets_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(GameType.MIXED_DOUBLES, 3)}"
+                        android:checked="@{viewModel.checkedMixedDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.MIXED_DOUBLES)].sets == 3 ? true : false: false}"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <TextView
+                    android:id="@+id/tv_mixed_doubles_tiebreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rg_mixed_doubles_tiebreak"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_tournament_matches_rules"
+                    app:layout_constraintTop_toTopOf="@id/rg_mixed_doubles_tiebreak" />
+
+            <RadioGroup
+                    android:id="@+id/rg_mixed_doubles_tiebreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_tournament_matches_rules"
+                    app:layout_constraintStart_toEndOf="@id/tv_mixed_doubles_tiebreak"
+                    app:layout_constraintTop_toBottomOf="@id/rg_mixed_doubles_sets_number">
+
+                <RadioButton
+                        android:id="@+id/rb_mixed_doubles_tiebreak_not_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.MIXED_DOUBLES, Tiebreak.NOT_ALLOWED)}"
+                        android:checked="@{viewModel.checkedMixedDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.MIXED_DOUBLES)].tiebreak == Tiebreak.NOT_ALLOWED ? true : false: false}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_mixed_doubles_tiebreak_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.MIXED_DOUBLES, Tiebreak.TEN_POINTS)}"
+                        android:checked="@{viewModel.checkedMixedDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.MIXED_DOUBLES)].tiebreak == Tiebreak.TEN_POINTS ? true : false: false}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_mixed_doubles_tiebreak_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(GameType.MIXED_DOUBLES, Tiebreak.TWELVE_POINTS)}"
+                        android:checked="@{viewModel.checkedMixedDoubles ? viewModel.gamesRules[viewModel.getIndexOfGameRulesByGameType(GameType.MIXED_DOUBLES)].tiebreak == Tiebreak.TWELVE_POINTS ? true : false: true}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

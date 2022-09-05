@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.example.tennistournamenthelper.model.Surface" />
+
+        <import type="com.example.tennistournamenthelper.model.Tiebreak" />
+
+        <import type="com.example.tennistournamenthelper.ResultStatus" />
+
+        <variable
+                name="viewModel"
+                type="com.example.tennistournamenthelper.presentation.matches.NewMatchTournamentNoRelatedViewModel" />
+
+    </data>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+            <TextView
+                    android:id="@+id/tv_surface_new_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/surface"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_surface_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toTopOf="@id/rg_surface_new_match_tournament_no_related" />
+
+            <RadioGroup
+                    android:id="@+id/rg_surface_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_surface_new_match"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_top_new_match_tournament_no_related">
+
+                <RadioButton
+                        android:id="@+id/rb_hard_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.HARD)}"
+                        android:text="@string/hard" />
+
+                <RadioButton
+                        android:id="@+id/rb_grass_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.GRASS)}"
+                        android:text="@string/grass" />
+
+                <RadioButton
+                        android:id="@+id/rb_clay_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSurface(Surface.CLAY)}"
+                        android:text="@string/clay" />
+            </RadioGroup>
+
+            <TextView
+                    android:id="@+id/tv_date_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_games_new_match_tournament_no_related" />
+
+            <DatePicker
+                    android:id="@+id/dp_date_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date_new_match_tournament_no_related" />
+
+            <TextView
+                    android:id="@+id/tv_game_type_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_type"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_games_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/rg_surface_new_match_tournament_no_related" />
+
+            <Spinner
+                    android:id="@+id/spinner_games_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_game_type_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/rg_surface_new_match_tournament_no_related" />
+
+
+            <TextView
+                    android:id="@+id/tv_singles_sets_number_new_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_sets"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_singles_sets_number_new_match"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toTopOf="@id/rg_singles_sets_number_new_match" />
+
+            <RadioGroup
+                    android:id="@+id/rg_singles_sets_number_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_singles_sets_number_new_match"
+                    app:layout_constraintTop_toBottomOf="@id/dp_date_new_match_tournament_no_related">
+
+                <RadioButton
+                        android:id="@+id/rb_singles_sets_two_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="@{() -> viewModel.setSets(2)}"
+                        android:text="@string/_2" />
+
+                <RadioButton
+                        android:id="@+id/rb_singles_sets_three_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setSets(3)}"
+                        android:text="@string/_3" />
+            </RadioGroup>
+
+            <TextView
+                    android:id="@+id/tv_singles_tiebreak_new_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tiebreak"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_singles_tiebreak_new_match"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toTopOf="@id/rg_singles_tiebreak_new_match" />
+
+            <RadioGroup
+                    android:id="@+id/rg_singles_tiebreak_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_singles_tiebreak_new_match"
+                    app:layout_constraintTop_toBottomOf="@id/rg_singles_sets_number_new_match">
+
+                <RadioButton
+                        android:id="@+id/rb_singles_tiebreak_not_allowed_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(Tiebreak.NOT_ALLOWED)}"
+                        android:text="@string/not_allowed" />
+
+                <RadioButton
+                        android:id="@+id/rb_singles_tiebreak_ten_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.setTiebreak(Tiebreak.TEN_POINTS)}"
+                        android:text="@string/_10" />
+
+                <RadioButton
+                        android:id="@+id/rb_singles_tiebreak_twelve_new_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="@{() -> viewModel.setTiebreak(Tiebreak.TWELVE_POINTS)}"
+                        android:text="@string/_12" />
+            </RadioGroup>
+
+
+            <TextView
+                    android:id="@+id/tv_players_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allowed_players_gender"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/rg_singles_tiebreak_new_match" />
+
+            <EditText
+                    android:id="@+id/et_playerOne_first_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_player_name"
+                    android:backgroundTint="#f9966b"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/tv_players_new_match_tournament_no_related" />
+
+            <EditText
+                    android:id="@+id/et_playerOne_second_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_player_name"
+                    android:backgroundTint="#f9966b"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_playerOne_first_new_match" />
+
+            <EditText
+                    android:id="@+id/et_playerTwo_first_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/et_playerTwo_first_new_match_margin_top"
+                    android:hint="@string/enter_player_name"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_playerOne_second_new_match" />
+
+            <EditText
+                    android:id="@+id/et_playerTwo_second_new_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_player_name"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_playerTwo_first_new_match" />
+
+            <EditText
+                    android:id="@+id/et_result_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_result"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/rg_winner_new_match_tournament_no_related" />
+
+            <TextView
+                    android:id="@+id/tv_winner_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/winner"
+                    app:layout_constraintBottom_toBottomOf="@id/rg_winner_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toTopOf="@id/rg_winner_new_match_tournament_no_related" />
+
+            <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_result_new_match_tournament_no_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_winner_new_match_tournament_no_related, rg_winner_new_match_tournament_no_related, et_result_new_match_tournament_no_related" />
+
+            <RadioGroup
+                    android:id="@+id/rg_winner_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/rg_winner_new_match_margin_top"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toEndOf="@id/tv_winner_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_playerTwo_second_new_match">
+
+                <RadioButton
+                        android:id="@+id/rb_winner_first_new_match_tournament_no_related"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/clay_orange"
+                        android:checked="true" />
+
+                <RadioButton
+                        android:id="@+id/rb_winner_second_new_match_tournament_no_related"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <Button
+                    android:id="@+id/b_create_new_match_tournament_no_related"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create"
+                    android:enabled="@{viewModel.createMatchUiState instanceof ResultStatus.Loading ? false : true }"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_right_new_match_tournament_no_related"
+                    app:layout_constraintStart_toStartOf="@id/guideline_left_new_match_tournament_no_related"
+                    app:layout_constraintTop_toBottomOf="@id/et_result_new_match_tournament_no_related" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
