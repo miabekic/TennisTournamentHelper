@@ -24,7 +24,7 @@ class FirebaseAuthManager {
                     unverifiedUser = currentUser
                     logOut()
                     ResultStatus.Failure(
-                        Resources.getSystem().getString(R.string.email_not_verified)
+                        "You did not verify your email. Did not get verification email? Click here to send verification email again."
                     )
                 } else {
                     unverifiedUser = null
