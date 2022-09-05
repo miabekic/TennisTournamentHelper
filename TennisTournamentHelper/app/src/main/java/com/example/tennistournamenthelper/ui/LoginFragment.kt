@@ -62,14 +62,14 @@ class LoginFragment : Fragment() {
                         viewModel.sendResetPasswordEmail(etEmail.text.toString())
                     } else Toast.makeText(
                         context,
-                        Resources.getSystem().getString(R.string.missing_email),
+                        context?.getString(R.string.missing_email),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
             }
             tvAlertLogin.setOnClickListener {
                 if (tvAlertLogin.text.equals(
-                        Resources.getSystem().getString(R.string.email_not_verified)
+                        context?.getString(R.string.email_not_verified)
                     )
                 ) {
                     viewModel.sendVerificationEmail()
